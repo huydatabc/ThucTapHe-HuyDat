@@ -1,12 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
-    "\\triluatsoft.tls.Web\\App",
-    "\\triluatsoft.tls.Web\\App\\tenant",
-    "\\triluatsoft.tls.Web\\App\\tenant\\views",
-    "\\triluatsoft.tls.Web\\App\\tenant\\views\\imageboard"
+    "\\src"
   ],
-  "SelectedNode": "\\src",
   "PreviewInSolutionExplorer": false
 }

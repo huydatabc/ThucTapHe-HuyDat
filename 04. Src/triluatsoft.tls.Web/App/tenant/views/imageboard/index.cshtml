@@ -1,0 +1,66 @@
+
+<div ng-controller="tenant.views.imageboard.index as vm">
+    <style>
+        #image {
+            width: 100px;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 2px;
+            padding: 2px;
+            display: block;
+        }
+
+        .fileinput-button input {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            -ms-filter: 'alpha(opacity=0)';
+            font-size: 200px;
+            direction: ltr;
+            cursor: pointer;
+            display: block;
+            z-index: 99999;
+        }
+    </style>
+    <div class="row margin-bottom-5">
+        <div class="col-xs-12">
+            <div class="page-head">
+                <div class="page-title">
+                    <h1>
+                        <span>@L("Image Board")</span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3>@L("AllThread")</h3>
+
+    <div class="list-group" style="position: relative " ng-repeat="person in vm.thread">
+        <div class="row">
+            <div class="panel panel-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img ng-if="person.fileExtension == '.jpg' || person.fileExtension == '.png'|| person.fileExtension == '.gif' || person.fileExtension == '.jpeg' || person.fileExtension == '.icon'" id="image" src="{{person.mediaPath}}">
+                        <video ng-if=" person.fileExtension == '.mp4' || person.fileExtension == '.webm'" width="240" height="160" <source src="{{person.mediaPath}}" style="display:block" controls loop/>  </video>
+                    </div>
+                    @*<a href="#!/thread/?id={{person.count}}">*@
+                    <a href="#!/thread/?id={{person.count}}" style="display:block; margin:auto; padding:2%;color: #000000;" class="col-md-9">
+                        <h4 style="width:80%;word-break:break-word;">
+                            ID:{{person.poster}} <br>PosterName : {{person.posterName}}<br>
+                            Text : {{person.text}}
+                        </h4>
+                    </a>
+                </div>
+            </div>
+
+            @*</a>*@
+
+        </div>
+        <button id="buttondel" ng-disabled="person.poster != vm.user.id" class="btn btn-icon-only red" style="position: absolute ;right: 10px; top:10px" ng-click="vm.delete(person.count)"><i class="fa fa-times"></i></button>
+        <button id="buttonedit" ng-disabled="person.poster != vm.user.id" class="btn btn-icon-only green" style="position: absolute ;right: 10px; bottom: 30px" ng-click="vm.edit(person.count)"><i class="fa fa-edit"></i></button>
+
+    </div>
+    <button style="left: 0;" class="btn btn-primary blue" ng-click="vm.edit('')"><i class="fa fa-plus"></i> @L("CreateNewThread")</button>
+
+</div>
