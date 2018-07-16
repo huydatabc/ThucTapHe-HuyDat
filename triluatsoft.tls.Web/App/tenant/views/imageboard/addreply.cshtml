@@ -1,0 +1,44 @@
+﻿<style>
+    .fileinput-button input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        -ms-filter: 'alpha(opacity=0)';
+        font-size: 200px;
+        direction: ltr;
+        cursor: pointer;
+        display: block;
+        z-index: 99999;
+    }
+</style>
+<div>
+    <form name="createReplyForm" role="form" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 ng-if="vm.person == ''" class="modal-title">
+                <span> @L("CreateNewReply") </span>
+            </h4>
+            <h4 ng-if="vm.person != ''" class="modal-title">
+                <span> @L("EditNewReply") </span>
+            </h4>
+        </div>
+        <div class="modal-body">
+
+            <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                <input class="form-control" type="text" name="Name" ng-model="vm.thread.content" required maxlength="164">
+                <label ng-if="vm.person == ''" >@L("Name")</label>
+            </div>
+
+            @*<div ng-if="vm.person == ''" hide class="form-group form-md-line-input form-md-floating-label no-hint">
+                <input type="number" name="CreatorId" class="form-control" ng-model="vm.thread.creatorId" maxlength="24">
+                <label ng-if="vm.person == ''">@L("Creator_ID")</label>
+            </div>*@
+            <span ng-if="vm.person == ''" hide style="margin-left:0px;" class="btn green fileinput-button"><i class="fa fa-upload"></i><span>Start upload</span><input type="file" name="file" nv-file-select uploader="vm.imageUpload"> </span>
+
+        </div>
+        <div class="modal-footer">
+            <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.cancel()">@L("Cancel")</button>
+            <button type="submit" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn btn-primary blue" ng-click="vm.save()" ng-disabled="createThreadForm.$invalid"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+        </div>
+    </form>
+</div>
