@@ -42,57 +42,6 @@
 
             };
             debugger;
-            //vm.imageUpload = new fileUploader(
-            //    {
-
-            //        url: abp.appPath + "File/UploadFile",
-            //        autoUpload: true,
-            //        filters:
-            //            [{
-            //                name: 'fileFilter',
-            //                fn: function (item, options) {
-            //                    //File type check
-            //                    var type = '|' + item.type.slice(item.type.lastIndexOf('/') + 1) + '|';
-            //                    if ('|jpg|jpeg|png|ico|'.indexOf(type) === -1) {
-            //                        abp.message.warn(app.localize('ProfilePicture_Warn_FileType'));
-            //                        return false;
-            //                    }
-
-            //                    return true;
-            //                }
-            //            }]
-            //    });
-
-            //vm.imageUpload = new fileUploader({
-            //    url: abp.appPath + 'File/UploadFile',
-            //    headers:
-            //        {
-            //            "X-XSRF-TOKEN": abp.security.antiForgery.getToken()
-            //        },
-            //    autoUpload: true,
-            //    filters: [{
-            //        name: 'fileFilter',
-            //        fn: function (item, options) {
-            //            //File type check
-            //            var type = '|' + item.type.slice(item.type.lastIndexOf('/') + 1) + '|';
-            //            if ('|jpg|jpeg|png|ico|'.indexOf(type) === -1) {
-            //                abp.message.warn(app.localize('ProfilePicture_Warn_FileType'));
-            //                return false;
-            //            }
-
-            //            return true;
-            //        }
-            //    }]
-            //});
-            //debugger;
-            //vm.imageUpload.onSuccessItem = function (fileItem, response, status, headers)
-            //{
-            //    if (response.success) {
-            //        vm.TempPicSubIcon = "~/Temp/media/" + response.fileItem;
-            //    } else {
-            //        abp.message.error(response.error.message);
-            //    }
-            //};
 
             vm.edit = function (person) {
                 debugger

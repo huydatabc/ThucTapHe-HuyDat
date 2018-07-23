@@ -2917,6 +2917,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App\tenant\views\imageboard\hub\BoardHub.cs" />
     <Compile Include="Models\Layout\TenantCustomCssViewModel.cs" />
     <Compile Include="App_Start\Bundling\CssRewriteUrlWithVirtualDirectoryTransform.cs" />
     <Compile Include="App_Start\Bundling\AsIsBundleOrderer.cs" />
