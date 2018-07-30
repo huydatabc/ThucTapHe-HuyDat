@@ -1,4 +1,14 @@
-﻿<style>
+﻿<head>
+
+    <script src="http://localhost:6240/signalr/hubs"></script>
+    <script>
+        abp.signalr = abp.signalr || {};
+        abp.signalr.autoConnect = false;
+    </script>
+    <script src="http://localhost:6240/Abp/Framework/scripts/libs/abp.signalr.js"></script>
+
+</head>
+<style>
     #image {
         width: 100px;
         height: auto;

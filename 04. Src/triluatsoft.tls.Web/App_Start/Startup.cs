@@ -19,6 +19,7 @@ using triluatsoft.tls.Web;
 using triluatsoft.tls.Web.Auth;
 using triluatsoft.tls.WebApi.Controllers;
 using Owin;
+using System.Web.Services.Description;
 
 [assembly: OwinStartup(typeof(Startup))]
 
@@ -207,5 +208,6 @@ namespace triluatsoft.tls.Web
                 "true",
                 StringComparison.InvariantCultureIgnoreCase);
         }
+
     }
 }

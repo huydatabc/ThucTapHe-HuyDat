@@ -22,6 +22,7 @@
                         abp.notify.info(app.localize('SavedSuccessfully'));
                         $uibModalInstance.close();
                     }).finally(function () {
+                        replyHub.server.updateReply();
                         vm.saving = false;
                     });
                 } else
@@ -32,6 +33,7 @@
                         abp.notify.info(app.localize('SavedSuccessfully'));
                         $uibModalInstance.close();
                     }).finally(function () {
+                        replyHub.server.updateReply();
                         vm.saving = false;
                     });
                 }

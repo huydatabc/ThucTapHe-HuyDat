@@ -20,6 +20,7 @@
                         abp.notify.info(app.localize('SavedSuccessfully'));
                         $uibModalInstance.close();
                     }).finally(function () {
+                        chatHub.server.updateThread();
                         vm.saving = false;
                     });
                 } else {
@@ -29,6 +30,7 @@
                         abp.notify.info(app.localize('SavedSuccessfully'));
                         $uibModalInstance.close();
                     }).finally(function () {
+                        chatHub.server.updateThread();
                         vm.saving = false;
                     });
                 }
